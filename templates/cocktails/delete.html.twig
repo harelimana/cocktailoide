@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            {% block row_content %}
+                {% include('/inc/error.html.twig') %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

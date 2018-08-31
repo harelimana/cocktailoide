@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello cocktailoides !{% endblock %}
+
+{% block body %}
+    {% block container %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <h3>Liste de cocktails</h3>
+                    <hr>
+                    <table class="table-striped">
+                        <tr class="bg-success">
+                            <th>id</th>
+                            <th>nom</th>
+                            <th>Description</th>
+                            <th>prix</th>
+                            <th>volume</th>
+                            <th>Origine</th>
+                            <th>Image</th>
+                        </tr>
+
+                        {% for cockt in cocktail %}
+                            <tr class="small">
+                                <td>
+                                    {{ cockt.id }}
+                                </td>
+                                <td>
+                                    {{ cockt.nom }}
+                                </td>
+                                <td>
+                                    {{ cockt.description }}
+                                </td>
+                                <td>
+                                    {{ cockt.prix }}
+                                </td>
+                                <td>
+                                    {{ cockt.volume }}
+                                </td>
+                                <td>
+                                    {{ cockt.imageUrl }}
+                                </td>
+                                <td class="bg-light navbar-btn"><a
+                                            href="{{ path('cocktail_details', {'id':cockt.id}) }}">voir</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}

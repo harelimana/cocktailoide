@@ -1,0 +1,27 @@
+{% extends 'cocktails/layout.html.twig' %}
+{% form_theme formedit 'bootstrap_4_layout.html.twig' %}
+{% block row_content %}
+    <div class="form-group">
+        {{ form_start(formedit, {'attr': {'novalidate': 'novalidate'}}) }}
+        <div class="alert-danger">
+            {{ form_errors(formedit) }}
+        </div>
+        {{ form_row(formedit.titre,{'attr':{'placeholder':"titre du film"}}) }}
+        <div>
+            <!-- form_row permet d'afficher tout ce qu'il pour un champs -->
+            {{ form_row(formedit.nom,{'attr':{'placeholder':"nom du cocktail"}}) }}
+            {{ form_row(formedit.description) }}
+            {{ form_row(formedit.prix, {'attr':{'placeholder':"prix du cocktail"}})}}
+            {{ form_row(formedit.volume, {'attr':{'placeholder':"volume du cocktail"}}) }}
+            {{ form_row(formedit.origine, {'attr':{'placeholder':"origine du cocktail"}}) }}
+            {{ form_row(formedit.image, {'attr':{'placeholder':"image du cocktail"}}) }}
+
+        </div>
+        {{ form_end(formedit) }}
+        <button type="button" class="btn btn-success">
+            {% if 'modifMode' %}Save Modifications
+            {%  else %} Submit
+            {% endif %}
+        </button>
+    </div>
+{% endblock %}

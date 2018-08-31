@@ -1,0 +1,32 @@
+<!--<div class="bg-light navbar navbar-expand-sm bg-header justify-content-left">
+
+    {##} block header_content %}
+        <div>
+            <img class="mr-3" src="http://placekitten.com/g/160/90" alt="Image"/>
+            <h3>Symfonoïds</h3>
+        </div>
+        <div>
+            <nav class="nav fl">
+                <ul><a href= {{ path('addcocktail') }}>Create</a></ul>
+                <ul><a href= {{ path('addcocktail')}}>Update</a></ul>
+                <ul><a href="">Delete</a></ul>
+            </nav>
+        </div>
+    {##}endblock %}
+</div> -->
+<div class="centrage pos">
+    <div class="logo">
+        <a href="./"><img src="{{asset('assets/images/logo.png')}}"  height="60" alt=""/></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href={{ path('oocktailisting') }}>Home</a></li> <!--
+            --><li><a href=>Create</a></li><!--
+            --><li><a href='/editcockt/{id}/edit'>Update</a></li><!--
+            --><li><a href={{ path('removecockt',{'id':cockt.id}) }}>Delete</a></li><!--
+            --><li><a href="./">News</a></li><!--
+            --><li><a href="./">Contact</a></li>
+        </ul>
+        <a href="#" class="pull">MENU</a>
+    </nav>
+</div>
